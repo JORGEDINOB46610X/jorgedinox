@@ -58,6 +58,7 @@
 
 
                  ----JORGE DINOX CORP. Y JORGE DINOBAGGIOX PÁGINA OFICIAL----
+
 -->
 
 
@@ -72,24 +73,24 @@
 
                                    
                                     
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JORGE DINOX CORPORATION PAGINA OFICIAL | JORGE DINOBAGGIOX | JDX DINOX UNIVERSO |  CREATIVIDAD, COMEMOS ARROZ CON POLLO, DISEÑAMOS EL ÉXITO</title>
-    <style>
-        /* Establecer el color de fondo verde claro en toda la página */
-        body {
+    
+<meta charset="UTF-8">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <title>JORGE DINOX CORPORATION PAGINA OFICIAL | JORGE DINOBAGGIOX | JDX DINOX UNIVERSO |  CREATIVIDAD, COMEMOS ARROZ CON POLLO, DISEÑAMOS EL ÉXITO</title>
+    
+     <style>
+        
+      /* Establecer el color de fondo verde claro en toda la página */
+       
+         body {
+            
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #e0f7fa; /* Color verde desvanecido */
@@ -99,7 +100,9 @@
         }
 
         /* Encabezado */
+
         .header {
+
             background-color: #00695c; /* Verde oscuro */
             color: #fff;
             padding: 10px;
@@ -113,10 +116,13 @@
             justify-content: flex-end; /* Mueve todo hacia la derecha */
             align-items: center;
             padding-right: 20px; /* Ajuste para mover todo a la derecha */
+
         }
 
         /* Logotipo sin animación */
+
         .logo {
+
             height: 40px;
             cursor: pointer;
             transition: filter 0.3s ease;
