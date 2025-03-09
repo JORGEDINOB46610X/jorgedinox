@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        /* Establecer el color de fondo verde claro en toda la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Color verde desvanecido */
+            color: #333;
+            overflow-x: hidden; /* Evitar el desplazamiento horizontal */
+            cursor: url('dinosaurio.png'), auto; /* Establecer el puntero como la imagen del dinosaurio */
+        }
+
+        /* Encabezado fijo con fondo verde oscuro */
+        .header {
+            background-color: #00695c; /* Verde oscuro */
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end; /* Mueve todo hacia la derecha */
+            align-items: center;
+            padding-right: 20px; /* Ajuste para mover todo a la derecha */
+        }
+
+        /* Logotipo sin animación */
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            transition: filter 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .logo:hover {
+            filter: brightness(1.2); /* Cambia de color al pasar el mouse */
+        }
+
+        /* Menú de idiomas (se despliega a la izquierda) */
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+            padding: 8px 16px;
+            color: white;
+            background-color: #004d40; /* Verde más oscuro */
+            font-size: 16px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: -100%; /* Despliega hacia la izquierda */
+            background-color: #004d40; /* Fondo de menú de idiomas */
+            min-width: 300px; /* Ancho del menú de idiomas */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #00695c; /* Verde más claro al pasar el mouse */
+        }
+
+        /* Estilos para el menú horizontal */
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #004d40; /* Verde oscuro */
+            position: fixed;
+            width: 100%;
+            top: 60px;
+            padding: 12px 0;
+            z-index: 999;
+        }
+
+        /* Estilo de los botones del menú */
+        .menu-item {
+            text-align: center;
+            margin: 0 15px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item img {
+            width: 60px;
+            height: 60px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .menu-item span {
+            display: block;
+            margin-top: 5px;
+            color: white;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-item:hover span {
+            color: #f1f1f1;
+        }
+
+        /* Botón de regresar arriba */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 120px; /* Posición alineada con los botones de idiomas */
+            background-color: #004d40; /* Fondo verde */
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+            border-radius: 50%;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-top:hover {
+            background-color: #00695c; /* Fondo más claro al pasar el mouse */
+            transform: scale(1.1); /* Rebota al pasar el mouse */
+        }
+
+        /* Estilo para el footer */
+        .footer {
+            background-color: #004d40; /* Verde oscuro */
+            color: #fff;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer .social-links a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer .social-links a:hover {
+            color: #f1f1f1;
+        }
+
+        .footer .logotipo-footer {
+            margin-bottom: 10px;
+        }
+
+        /* Diseño responsive */
+        @media (max-width: 768px) {
+            /* Menú horizontal y botones */
+            .menu-container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .menu-item img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .menu-item span {
+                font-size: 12px;
+            }
+
+            .scroll-top {
+                right: 20px;
+            }
+
+            /* Cambiar el dropdown a un solo menú en móviles */
+            .dropdown-content {
+                left: 0; /* Menú ahora se expande a la izquierda de todo el contenido */
+                min-width: 100%;
+                text-align: left;
+                padding: 10px 20px;
+                display: none; /* Escondido por defecto */
+            }
+
+            .dropdown-content a {
+                padding: 15px 10px;
+                width: 100%; /* Asegura que los enlaces ocupen todo el espacio */
+                border-bottom: 1px solid #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block; /* Se despliega al hacer hover */
+            }
+        }
+
+        /* Evitar desplazamiento horizontal */
+        body, html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Espacio para las secciones */
+        section {
+            padding: 100px 20px;
+            margin-top: 60px; /* Asegura que no se solapen con el header fijo */
+        }
+
+        /* Estilos para la sección Home */
+        #home {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Añadir un espacio para las demás secciones */
+        #portada, #home, #submenu1, #submenu2, #submenu3, #submenu4 {
+            padding: 50px 20px;
+            margin-top: 60px;
+            background-color: #fff;
+        }
+
+        /* Estilo para el comentario que contiene el dibujo del dinosaurio */
+        .dinosaurio {
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 20px;
+            font-size: 14px;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Comentario con el dibujo del dinosaurio y la palabra JORGE DINOX -->
+    <div class="dinosaurio">
+        <!--
+         _       ____
+        / \     /    \
+       / _ \   /      \
+      / (_) \ /        \
+     /   _   \          |
+    /   (_)   \   JDX  |
+    /_______\__________|
+            JORGE DINOX
+        -->
+    </div>
+
+    <!-- Encabezado con logotipo y menú de idiomas -->
+    <div class="header">
+        <!-- Botón de idioma -->
+        <div class="dropdown">
+            ES
+            <div class="dropdown-content">
+                <a href="#" onclick="changeLanguage('es')">ES</a>
+                <a href="#" onclick="changeLanguage('en')">EN</a>
+                <a href="#" onclick="changeLanguage('fr')">FR</a>
+                <a href="#" onclick="changeLanguage('ja')">JA</a>
+            </div>
+        </div>
+
+        <!-- Logotipo al lado del botón de idiomas -->
+        <img src="favicon.ico" alt="Logotipo" class="logo" onclick="window.location.hash = '#home';">
+    </div>
+
+    <!-- Menú horizontal -->
+    <div class="menu-container">
+        <!-- Favicon al lado izquierdo del botón de portada -->
+        <div class="menu-item" onclick="window.location.hash = '#portada';">
+            <img src="favicon.ico" alt="Favicon">
+            <span>Portada</span>
+        </div>
+        <div class="menu-item" onclick="window.location.hash = '#home';">
+            <img src="home-icon.png" alt="Home">
+            <span>Home</span>
+        </div>
+        <div class="menu-item" onclick="window.location.hash = '#portafolio';">
+            <img src="portfolio-icon.png" alt="Portafolio">
+            <span>Portafolio</span>
+        </div>
+        <div class="menu-item dropdown" onclick="toggleDropdown()">
+            <img src="dropdown-icon.png" alt="Dropdown">
+            <span>Dropdown</span>
+            <div class="dropdown-content">
+                <a href="#submenu1">Submenu 1</a>
+                <a href="#submenu2">Submenu 2</a>
+                <a href="#submenu3">Submenu 3</a>
+                <a href="#submenu4">Submenu 4</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Home -->
+    <section id="home">
+        <h1>SOMOS</h1>
+        <h2>JORGE DINOX</h2>
+        <h3>CORPORACIÓN</h3>
+        <p>DISEÑO GRAFICO, MULTIMEDIA</p>
+        <h3>SOMOS LOS CREADORES DEL</h3>
+        <p>JDX DINOX UNIVERSO</p>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logotipo-footer">
+            <img src="favicon.ico" alt="Logotipo">
+        </div>
+        <div>
+            <p>SIGUE A JDX</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://youtube.com" target="_blank">YouTube</a>
+            </div>
+        </div>
+        <div>
+            <p>Portafolios:</p>
+            <div class="social-links">
+                <a href="https://behance.net" target="_blank">Behance</a>
+                <a href="https://linktree.com" target="_blank">Linktree</a>
+                <a href="https://artstation.com" target="_blank">Artstation</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de regresar arriba -->
+    <div class="scroll-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Función para mostrar el botón de regresar arriba cuando se hace scroll
+        window.onscroll = function() {
+            var scrollTopButton = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopButton.style.display = "block";
+            } else {
+                scrollTopButton.style.display = "none";
+            }
+        };
+
+        // Función para regresar al principio de la página
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Función para cambiar el idioma
+        function changeLanguage(language) {
+            alert("Idioma cambiado a: " + language);
+        }
+
+        // Función para alternar el dropdown
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
