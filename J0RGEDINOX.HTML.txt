@@ -1,9 +1,92 @@
+
+
+
+
+
+
+
+    <!-- JORGE DINOX CORPORATION -->
+    
+<div class="KID DINOBAGGIO">
+        
+                <!--
+
+
+
+
+                                    ________________________________________
+                                   /                                        \
+                                  /                                          \
+                                 /                                            \
+                                |               ____________                   |
+                               |              /             \                  | 
+                               |             /               \                 | 
+                               |            /                 \                | 
+                               |            |                 |                |             
+                               |            |                 |                |
+                               |            |                 |                |
+                               |            \                 /                |
+                               |             \_______________/                 |
+                               |                                               |
+                               |                                               |
+                               |                                               |
+                               |          _________________________            |
+                               |         \                        /            |                 
+                               |          \                      /             |
+                               |           \____________________/              |
+                               |                                              / 
+                               |                                             /
+                               |                                            /
+                               |                                           /
+                               |                                          /
+                               |                             _____________/
+                               |                             \ 
+                               |                              \ 
+                               |                               \ 
+  ___________                  |                                \
+/             \                |                                 \          
+/               \              |                                  \ 
+\                 \            |                                   \ 
+  \                \           |                                    \
+    \                \         |                                     \
+      \                \ _______________________________________________        
+        \                    /                                          \
+          \                 /                                            \ 
+           \_______________|                                              |
+                           |                                              |
+                            \_____________________________________________/
+
+
+                 ----JORGE DINOX CORP. Y JORGE DINOBAGGIOX PÁGINA OFICIAL----
+-->
+
+
+
+
+
+
+
+
+
+
+
+                                   
+                                    
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>JORGE DINOX CORPORATION PAGINA OFICIAL | JORGE DINOBAGGIOX | JDX DINOX UNIVERSO |  CREATIVIDAD, COMEMOS ARROZ CON POLLO, DISEÑAMOS EL ÉXITO</title>
     <style>
         /* Establecer el color de fondo verde claro en toda la página */
         body {
@@ -15,7 +98,7 @@
             cursor: url('dinosaurio.png'), auto; /* Establecer el puntero como la imagen del dinosaurio */
         }
 
-        /* Encabezado fijo con fondo verde oscuro */
+        /* Encabezado */
         .header {
             background-color: #00695c; /* Verde oscuro */
             color: #fff;
@@ -254,18 +337,6 @@
 </head>
 <body>
 
-    <!-- Comentario con el dibujo del dinosaurio y la palabra JORGE DINOX -->
-    <div class="dinosaurio">
-        <!--
-         _       ____
-        / \     /    \
-       / _ \   /      \
-      / (_) \ /        \
-     /   _   \          |
-    /   (_)   \   JDX  |
-    /_______\__________|
-            JORGE DINOX
-        -->
     </div>
 
     <!-- Encabezado con logotipo y menú de idiomas -->
